@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/GameDevLop.unity
+  isLoaded: 1
+  isActive: 1
