@@ -10,6 +10,8 @@ public class Gun : MonoBehaviour {
 	public float impactForce = 30f;
 
 	//public Camera fpsCam;
+	public Transform targetRaycast;
+
 	public ParticleSystem muzzelFlash;
 	public GameObject impactEffect;
 
@@ -31,7 +33,7 @@ public class Gun : MonoBehaviour {
 		muzzelFlash.Play ();
 
 		RaycastHit hit;
-		if (Physics.Raycast (transform.position, transform.forward, out hit, range)) 
+		if (Physics.Raycast (targetRaycast.transform.position, targetRaycast.transform.forward, out hit, range)) 
 		{
 			Debug.Log (hit.transform.name);
 			Target target = hit.transform.GetComponent<Target> ();
